@@ -24,7 +24,9 @@ export class SignInComponent implements OnInit {
         this.loginForm = this.formBuilder.group({
             userName: ['', Validators.required],
             password: ['', Validators.required]
-        })
+        });
+
+        this.focarNoUserName();
     }
 
     login() {
@@ -39,10 +41,14 @@ export class SignInComponent implements OnInit {
                 error => {
                     console.log(error);
                     this.loginForm.reset();
-                    this.platformDetectorService.isPlatformBrowser() &&
-                        this.userNameInput.nativeElement.focus();
+                    this.focarNoUserName();
                     alert('Invalid user name or password');
                 }
             );
+    }
+
+    focarNoUserName() {
+        this.platformDetectorService.isPlatformBrowser() &&
+            this.userNameInput.nativeElement.focus();
     }
 }

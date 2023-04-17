@@ -1,4 +1,7 @@
 {
-    "javascript.preferences.quoteStyle":"single",
-    "typescript.preferences.quoteStyle": "single"
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "html.format.enable": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.wrapLineLength": 80
 }
